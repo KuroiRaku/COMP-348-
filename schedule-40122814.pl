@@ -14,6 +14,7 @@ takes_course('40046378', 'comp', '352', 'aa').
 takes_course('40046378', 'comp', '352', 'aaag').
 course_schedule('comp', '352', 'aa', 'tue', '1830', '2100').
 course_schedule('comp', '352', 'aa', 'thu', '1830', '2100').
+course_schedule('comp', '352', 'aaaf', 'thu', '1830', '2100').
 course_schedule('comp', '348', 'aa', 'mon', '1445', '1715').
 course_schedule('comp', '348', 'aa', 'wed', '1445', '1715').
 course_schedule('comp', '348', 'aaae', 'mon', '1345', '1405').
@@ -39,16 +40,13 @@ has_taken2(S, [CNAM|[CNUM|[]]]) :-
   takes_course(S,CNAM,CNUM,_).
   /* true if S takes any sections of the course CNAM CNUM,
   e.g. takes('4000123', ['comp', '348']) */
-  
-all_subjects(S, L) :- 
+all_subjects(S, L) :- ...
   /* L contains all the courses subjects that have been
   taken by student S, i.e. ['comp', 'soen']; no duplicates */
-  
 all_courses(S, L) :- ...
   /* L contains all the courses that have been taken by
   student S, i.e. all_courses('4000123', L) will result in
   L=[['comp', '348', 'aa'], ['comp', '348', 'ab']] */
-  
 all_courses2(S, L) :- ...
   /* similar to all_courses but without section info;
   no duplicates */
