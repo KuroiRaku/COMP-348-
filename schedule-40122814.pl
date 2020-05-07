@@ -10,6 +10,8 @@ takes_course('40010381', 'comp', '348', 'abaf').
 takes_course('40010381', 'comp', '346', 'cc').
 takes_course('40046378', 'comp', '348', 'aa').
 takes_course('40046378', 'comp', '348', 'aaaf').
+takes_course('40046378', 'comp', '352', 'aa').
+takes_course('40046378', 'comp', '352', 'aaag').
 course_schedule('comp', '352', 'aa', 'tue', '1830', '2100').
 course_schedule('comp', '352', 'aa', 'thu', '1830', '2100').
 course_schedule('comp', '348', 'aa', 'mon', '1445', '1715').
