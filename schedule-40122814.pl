@@ -26,12 +26,15 @@ course_schedule('comp', '346', 'cc', 'thu', '1830', '2100').
 all_sections(CNAM, CNUM, L) :-
   findall(F,course_schedule(CNAM,CNUM,F,_,_,_),LL),
   write(LL),
+  /*You don't need the write function but just as a reference
+  */
   list_to_set(LL,L).
 
-has_taken(S, [CNAM|[CNUM|[SEC|[]]]]) :- ...
-  /* true if student S takes the course CNAM CNUM SEC,
-  e.g. takes('4000123', ['comp', '348', 'aa']) */
-has_taken2(S, [CNAM|[CNUM|[]]]) :- ...
+has_taken(S, [CNAM|[CNUM|[SEC|[]]]]) :-
+  takes_course(S,CNAM,CNUM,SEC).
+
+has_taken2(S, [CNAM|[CNUM|[]]]) :-
+  takes_course(S,CNAM,CNUM,_).
   /* true if S takes any sections of the course CNAM CNUM,
   e.g. takes('4000123', ['comp', '348']) */
 all_subjects(S, L) :- ...
