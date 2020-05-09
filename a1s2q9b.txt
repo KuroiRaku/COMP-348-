@@ -1,0 +1,2 @@
+%b) Write prolog query to print the total income of each family(the following line will be removed from here and will be added in the query):
+?- totalIncome(F,I).
