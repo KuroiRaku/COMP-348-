@@ -38,15 +38,21 @@ has_taken(S, [CNAM|[CNUM|[SEC|[]]]]) :-
 
 has_taken2(S, [CNAM|[CNUM|[]]]) :-
   takes_course(S,CNAM,CNUM,_).
-  /* true if S takes any sections of the course CNAM CNUM,
-  e.g. takes('4000123', ['comp', '348']) */
-all_subjects(S, L) :- ...
+
+all_subjects(S, L) :-
+  findall(F,takes_course(S,F,_,_),LL),
+  list_to_set(LL,L).
   /* L contains all the courses subjects that have been
   taken by student S, i.e. ['comp', 'soen']; no duplicates */
-all_courses(S, L) :- ...
+
+all_courses(S, L) :-
+  findall(F,takes_course(S,F,F,F),LL),
+  list_to_set(LL,L).
   /* L contains all the courses that have been taken by
   student S, i.e. all_courses('4000123', L) will result in
   L=[['comp', '348', 'aa'], ['comp', '348', 'ab']] */
-all_courses2(S, L) :- ...
+all_courses2(S, L) :-
+  findall(F,takes_course(S,F,F,_),LL),
+  list_to_set(LL,L).
   /* similar to all_courses but without section info;
   no duplicates */
