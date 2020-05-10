@@ -1,0 +1,111 @@
+1. food(bread, X) = Food(Y, soup)
+
+	A: Prolog is case sensitive, so this will not unify.
+
+2. Bread = soup
+
+	A: This will unify.
+
+	Bread = soup
+
+3. Bread = Soup
+
+	A: This will unify.
+
+	Soup = Bread
+
+4. food(bread, X, milk) = food(Y, salad, X)
+
+	A: This will not unify because if salad is instantiated with X then the RHS will be food(bread, salad, salad).
+	   Which is not equivalent to the LHS.
+
+5. manager(X) = Y
+
+	A: This will unify.
+		
+	y = manager(X)
+
+6. meal(healthyFood(bread), drink(milk)) = meal(X,Y)
+
+	A: This will unify.
+
+	X = healthyFood(bread)
+	Y = drink(milk)
+
+7. meal(eat(Z), drink(milk)) = [X]
+
+	A: This will not unify since there is no further variables that drink(milk) can instantiate to.
+
+8. [eat(Z), drink(milk)] = [X, Y | Z]
+
+	A: This will unify.
+
+	X = eat(Z)
+	Y = drink(milk)
+	Z = []
+
+9. f(X, t(b, c)) = f(l, t(Z, c))
+
+	A: This will unify.
+	
+	c = c
+	Z = b
+	X = l
+
+10. ancestor(french(jean), B) = ancestor(A, scottish(joe))
+	
+	A: This will unify
+	
+	A = french(jean)
+	B = scottish(joe)
+
+11. meal(healthyFood(bread), Y) = meal(X, drink(water))
+	
+	A: This will unify.
+	
+	X = healthyFood(bread)
+	Y = drink(water)
+
+12. [H|T] = [a, b, c]
+
+	A: This will unify
+	
+	H = a
+	T = [b,c]
+
+13. [H, T] = [a, b, c]
+	
+	A: This will not unify because c has nothing to instantiate to.
+
+14. breakfast(healthyFood(bread), egg, milk) = breakfast(healthyFood(Y), Y, Z)
+	
+	A: This will not unify because if bread is instantiated with Y then the RHS will be breakfast(healthyFood(bread), bread, Z).
+	   Which is not equivalent to the LHS.
+
+15. dinner(X, Y, Time) = dinner(jack, cook(egg, oil), Evening)
+	
+	A: This will unify.
+	
+	X = jack
+	Y = cook(egg, oil)
+	Time = Evening
+
+16. k(s(g), Y) = k(X, t(k))
+
+	A: This will unify.
+	
+	X = s(g)
+	Y = t(k)
+
+17. equation(Z, f(x, 17, M), L*M, 17) = equation(C, f(D, D, y), C, E)
+
+	A: This will not unify because D cannot be both instantiated with x and 17 at the same time.
+
+18. a(X, b(c, d), [H|T]) = a(X, b(c, X), b)
+
+	A: This will unify.
+
+	c = c
+	X = d
+	H = b
+	T = []
