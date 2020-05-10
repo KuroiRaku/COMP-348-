@@ -1,2 +1,15 @@
-%b) Write prolog query to print the total income of each family(the following line will be removed from here and will be added in the query):
-?- totalIncome(F,I).
+%b) Write prolog query to print the total income of each family:
+
+?- totalIncome(_,I).
+
+%which would output the following if we keep clicking on "Next" until there is no more data to show:
+I = 0
+I = 0
+I = 3200
+I = 33200
+I = 38200
+I = 45600
+I = 12000
+I = 35200
+I = 25050
+false
