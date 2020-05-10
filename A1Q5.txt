@@ -1,0 +1,10 @@
+?- all_courses('40122814',L).
+L = [[comp, '348', aa], [comp, '348', aaaf], [comp, '352', aa]].
+
+?- all_courses2('40122814',L).
+L = [[comp, '348'], [comp, '352']].
+
+all_courses have section info but all_courses2 has no section info.
+This is because all_courses2 doesn't take in section info
+Secondly, the function although records all courses that the student take even including different all_sections
+list_to_set has causes it to remove duplicates. 
