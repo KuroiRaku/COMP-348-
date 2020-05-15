@@ -47,9 +47,6 @@ salary(person(_,_,_,works(_,S)),S).
 salary(person(_,_,_,unemployed),0).
 
 %a) Write a prolog rule totalIncome/2 to compute the total income of a family:
-totalIncome(family(X,Y,T), Income):- family(X,Y,T),maplist(getSalary,[X,Y|T], List), sum(List,Income).
-
+totalIncome(family(X,Y,T), Income):- family(X,Y,T),maplist(salary,[X,Y|T], List), sum(List,Income).
 add(X,Y,Sum):- Sum is X+Y.
 sum(X1,Sum):- foldl(add,X1,0,Sum).
-getSalary(person(_,_,_,works(_,X)), X).
-getSalary(person(_,_,_,unemployed), 0).
