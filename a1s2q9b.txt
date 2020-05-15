@@ -13,3 +13,7 @@ I = 12000
 I = 35200
 I = 25050
 false
+
+
+alternative approach
+findall(S,totalIncome(_,S),L).

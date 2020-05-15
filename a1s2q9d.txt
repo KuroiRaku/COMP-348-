@@ -1,0 +1,4 @@
+family(X,_,_), member(S,X)
+totalIncome ( _ , Income ),
+length ( _ , N ),
+Income / N < 2000.
