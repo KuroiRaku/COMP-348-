@@ -1,15 +1,7 @@
 %b) Write prolog query to print the total income of each family:
 
-?- totalIncome(_,I).
+?- findall(Income,totalIncome(family(_,_,C),Income),L).
 
 %which would output the following if we keep clicking on "Next" until there is no more data to show:
-I = 0
-I = 0
-I = 3200
-I = 33200
-I = 38200
-I = 45600
-I = 12000
-I = 35200
-I = 25050
-false
+
+L = [0, 0, 3200, 33200, 38200, 45600, 12000, 35200, 25050]
