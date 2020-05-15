@@ -50,3 +50,10 @@ salary(person(_,_,_,unemployed),0).
 totalIncome(family(X,Y,T), Income):- family(X,Y,T),maplist(salary,[X,Y|T], List), sum(List,Income).
 add(X,Y,Sum):- Sum is X+Y.
 sum(X1,Sum):- foldl(add,X1,0,Sum).
+
+%c) Write a prolog query to print family details of each family that has income per family member less than 2000.
+average( List, Average ):- 
+    sum( List, Sum ),
+    length( List, Length ),
+    Length > 0, 
+    Average is Sum / Length.
