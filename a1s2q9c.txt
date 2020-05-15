@@ -1,0 +1,1 @@
+family(X,Y,T),member(S,[X,Y,T]),maplist(salary,[S,X,Y],List).
