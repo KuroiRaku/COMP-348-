@@ -1,0 +1,22 @@
+#examples:
+
+?- lucas(0,L).
+   L=1
+
+?- lucas(1,L).
+   L=1
+
+?- lucas(2,L).
+   L=2
+
+?- lucas(3,L).
+   L=3
+
+?- lucas(4,L).
+   L=5
+
+?- lucas(5,L).
+   L=8
+
+
+

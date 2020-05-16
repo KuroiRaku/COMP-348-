@@ -1,0 +1,7 @@
+?-cir(0, _, X, Y).
+
+Output: 
+X=0,
+Y=1
+X=Y, Y=0
+false.
