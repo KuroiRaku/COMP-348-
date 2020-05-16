@@ -1,1 +1,3 @@
-family(X,Y,T),member(S,[X,Y,T]),maplist(salary,[S,X,Y],List).
+
+
+findall([X,Y,T],(family(X,Y,T),maplist(salary,[X,Y|T],List),length(List,NN),sum(List,L),P is L // NN, P<2000),LL).

@@ -1,4 +1,1 @@
-family(X,_,_), member(S,X)
-totalIncome ( _ , Income ),
-length ( _ , N ),
-Income / N < 2000.
+findall([X,Y,T],(family(X,Y,T),maplist(salary,T,List),sum(List,L),maplist(salary,[X,Y],List2),sum(List2,LL),LL<L),G).
