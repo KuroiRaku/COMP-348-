@@ -1,0 +1,146 @@
+1. ? field(hit_transfer,engineering).
+
+	A: This is a ground querry.
+	
+	outputs: false
+
+	The program will output false because it cannot find the fact field(hit_transfer,engineering).
+
+2. ? lab_number(fine_arts,X).
+
+	A: This is a non ground querry.
+
+	outputs: X = 10
+	
+	The program will output X = 10 because it found the fact lab_number(fine_arts,10).
+
+3. ? field(computer,literature).
+
+	A: This is a ground querry.
+
+	outputs: false
+
+	The program will output false because it cannot find the fact field(computer,literature).
+
+4. ? course(X,Y).
+
+	A: This is a non-ground querry.
+	
+	outputs: X = hit_transfer,
+		 Y = mechanical
+		 X = web_design,
+		 Y = computer
+		 X = design_methods,
+		 Y = fine-arts
+		 X = poetry,
+		 Y = literature
+		 X = leadership,
+		 Y = management
+		 X = biology,
+		 Y = medicin
+
+	The program will output all the courses with their variables assigned to X and Y respectively.
+
+5. ? student(adrian).
+
+	A: This is a ground querry.
+
+	outputs: true
+
+	The program will output true because when it runs the rule student(X):- student(X,_), it will find that student(adrian,webdesigner) exist. Which makes student(adrian) true.
+
+6. ? student(anna, engineering).
+
+	A: This is a ground querry.
+
+	outputs: false
+
+	The program will output false because it cannot find the fact student(anna, engineering).
+
+7. ? student(X, engineering).
+
+	A: This is a non-ground querry.
+
+	outputs: X = anna
+		 X = daniel
+		 X = adrian
+
+	The program will output the above.
+
+8. ? student(X,fine-arts), course(fine_arts, Y).
+	
+	A: This is a non-ground querry.
+
+	outputs: false
+
+	The program will output false because it cannot find X and Y that will make both true.
+
+9. ? field(_,X).
+
+	A: This is a non-ground querry.
+	
+	outputs: X = engineering
+		 X = engineering
+		 X = art
+		 X = social
+		 X = buisiness
+		 X = engineering
+		 X = engineering
+		 X = art
+		 X = social
+		 X = buisiness
+
+	The program will output the second element of each field(). Once it hits the rule field(X, Y) :- course(X, Z), field(Z, Y). it will do the same thing again.
+
+10. ? lab_number(_,X), field(X,Y).
+
+	A: This is a non-ground querry.
+	
+	outputs: false
+
+	The program will output false because it cannot find X and Y that will make both true.
+	When X = 15 or 10 for lab_number(_,X), the fact field(15,Y). will not exist. 
+
+11. ? lab_number(X,15), field(X,Y).
+
+	A: This is a non-ground querry.
+	
+	outputs: X = mechanical,
+		 Y = engineering
+		 X = hit_transfer,
+		 Y = engineering
+
+	The program will output the above. 
+	When the program hits the fact lab_number(mechanical, 15) it will instantiate mechanical with X.
+	Then it find a field(mechanical,Y) that can satisfy the rule. Which we get Y = engineering.
+	When the program hits the rule lab_number(X, Z) :-course(X, Y), lab_number(Y, Z). it will assign X = hit_transfer, while Y stays mechanical.
+
+12. ? student(X), !, student(X,_).
+
+	A: This is a non-ground querry.
+	
+	outputs: X = anna
+		 X = anna
+	
+	The program will output the above.
+	When the program hits the the rule student(X):- student(X,_). it will look for the first X that makes the rule true.
+	So, X = anna from student(X):- student(X,_), and the rule gets cut as a X that satisfies the fact student(X) is found. 
+
+13. ? student(X), student(X,_), !.
+
+	A: This is a non-ground querry.
+	
+	outputs: X = anna
+	
+	The program will output the above.
+	Since the cut is after the first two facts, the program will look for the first X that satisfies both facts.
+	X = anna is the first thing that will satisfy both.
+
+14. ? course(X,_), \+ student(_,X). 
+
+	A: This is a non-ground querry.
+	
+	outputs: X = biology
+
+	The program will output the above.
+	
