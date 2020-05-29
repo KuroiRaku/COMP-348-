@@ -1,0 +1,14 @@
+TEST
+(defun halfify (list)
+  (labels ((accum (tail n accum)
+             (if (null tail)
+                 (split accum (round n 2) '() '())
+               (accum (rest tail) (1+ n) (cons (first tail) accum))))
+           (split (tail n h1 h2)
+             (cond ((null tail)
+                    (values h1 h2))
+                   ((> n 0)
+                    (split (rest tail) (1- n) (cons (first tail) h1) h2))
+                   (t
+                    (split (rest tail) n h1 (cons (first tail) h2))))))
+    (accum list 0 '())))
