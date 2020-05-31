@@ -1,0 +1,20 @@
+(defun is-BST (node)
+   (cond 
+         ((null (first node)) t)
+         ((and (not (null (caadr node)) ) (< (first node) (caadr node)) )  nil) ;caadr = (car (car (cdr x)))
+
+         ((and (not (null (caaddr node))) (> (car node) (caaddr node)))  nil);caaddr = (car (car (cdr (cdr x))))
+
+         ((and (not (isBST (cadr node))) (not (isBST (caddr node)))) ))
+;cadr = (car (cdr x))
+;caddr = (car (cdr (cdr x)))
+
+  )
+
+(print (is-BST '(8 (3 (1 () ())
+               (6 (4 () ())
+                  (7 () ())))
+            (10 ()
+                (14 (13 () ())
+                    ())))))
+
