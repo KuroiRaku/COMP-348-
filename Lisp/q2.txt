@@ -1,5 +1,5 @@
 TEST
-(defun halfify (list)
+(defun reverse-cut-in-half (list)
   (labels ((accum (tail n accum)
              (if (null tail)
                  (split accum (round n 2) '() '())

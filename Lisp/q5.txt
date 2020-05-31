@@ -1,0 +1,16 @@
+(defun balancedp (smt)
+	(let ((B T))
+	(loop for el in smt
+	do
+	(if (listp el)
+	(progn
+	(if (not (= (list-length el) (list-length smt)))
+	(progn
+	(setq B nil)
+	nil)
+	))
+	))
+	B))
+
+
+  
