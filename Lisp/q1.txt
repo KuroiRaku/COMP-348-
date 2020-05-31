@@ -1,5 +1,5 @@
 (defun second-n-loop (list n)
-  (loop for i from (- (list-length list) n) to (list-length list)
+  (loop for i from (- (list-length list) n) to (-(list-length list) 1)
      collect (nth i list)))
 
 
