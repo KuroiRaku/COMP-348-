@@ -21,11 +21,11 @@
           )
         
           ((not(typep n 'integer))
-               (write-line "Invalid number; please enter a positive or a negative integer.")
+               (write-line "Invalid number; please enter  a positive or a negative integer.")
           )
         
           ((= n 0)
                (write-line "Invalid number; please enter a positive or a negative integer")
-          )
+       )
     )
 )
