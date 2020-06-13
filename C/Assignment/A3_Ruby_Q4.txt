@@ -1,0 +1,45 @@
+class Shape
+  # constructor method
+
+circle = Shape.new()
+  radius = 5.0
+  perimeter = 0.0
+  area = 0.0
+  print "Input the radius of the circle: "
+  radius = gets.to_f
+  perimeter = 2 * 3.141592653 * radius
+  area = 3.141592653 * radius * radius
+  puts "The perimeter is #{perimeter}."
+  puts "The area is #{area}."
+puts ""
+
+rectangle = Shape.new()
+  width = 3.0
+  length = 5.0
+  perimeter = 0.0
+  area = 0.0
+  print "Input the width of the rectangle: "
+  width = gets.to_f
+  print "Input the length of the rectangle: "
+  length = gets.to_f
+  perimeter = 2 * (width + length)
+  area = width * length
+  puts "The perimeter is #{perimeter}."
+  puts "The area is #{area}."
+puts ""
+
+eclipse = Shape.new()
+  semiMajor = 5.0
+  semiMinor = 2.0
+  area = 0.0
+  eccentricity = 0.0
+  print "Input the semiMajor of the eclipse: "
+  semiMajor = gets.to_f
+  print "Input the semiMinor of the eclipse: "
+  semiMinor = gets.to_f
+  eccentricity = Math.sqrt(semiMajor * semiMajor - semiMinor * semiMinor)
+  area = 3.141592653 * semiMajor * semiMinor
+  puts "The area is #{area}."
+  puts "The eccentricity is #{eccentricity}."
+
+end
