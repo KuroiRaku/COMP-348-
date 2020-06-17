@@ -1,0 +1,32 @@
+shape_hash = Hash.new()
+
+shape_hash["Shapes(s)"] = 0
+shape_hash["Circle(s)"] = 0
+shape_hash["Rectangle(s)"] = 0
+shape_hash["Ellipse(s)"] = 0
+
+File.readlines("shapes.txt").each do |line|
+  info = line.split
+
+  if (info[0] == "circle" || info[0] == "Circle" || info[0] == "rectangle" || info[0] == "Rectangle" || info[0] == "ellipse" || info[0] == "Ellipse") && (info[1].to_f < 0 || info[2].to_f <0)
+    next
+  end
+
+  if info[0] == "shape" || info[0] == "Shape"
+    shape_hash["Shapes(s)"] += 1
+  elsif info[0] == "circle" || info[0] == "Circle"
+    shape_hash["Circle(s)"] += 1
+    shape_hash["Shapes(s)"] += 1
+  elsif info[0] == "rectangle" || info[0] == "Rectangle"
+    shape_hash["Rectangle(s)"] += 1
+    shape_hash["Shapes(s)"] += 1
+  elsif info[0] == "ellipse" || info[0] == "Ellipse"
+    shape_hash["Ellipse(s)"] += 1
+    shape_hash["Shapes(s)"] += 1
+  end
+end
+
+puts "Statistics:"
+shape_hash.each do |key, value|
+  print "   " + key + ": " + value.to_s + "\n"
+end

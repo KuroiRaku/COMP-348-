@@ -1,0 +1,22 @@
+File.readlines("shapes.txt").each do |line|
+  info = line.split
+
+  if (info[0] == "circle" || info[0] == "Circle" || info[0] == "rectangle" || info[0] == "Rectangle" || info[0] == "ellipse" || info[0] == "Ellipse") && (info[1].to_f < 0 || info[2].to_f <0)
+    puts "Error: Invalid " + info[0]
+    next
+  end
+
+  if info[0] == "shape" || info[0] == "Shape"
+    shape = Shape.new
+    puts "Shape: perimeter -> undefined: area -> undefined"
+  elsif info[0] == "circle" || info[0] == "Circle"
+    circle = Circle.new(info[1].to_f)
+    circle.print
+  elsif info[0] == "rectangle" || info[0] == "Rectangle"
+    rectangle = Rectangle.new(info[1].to_f, info[2].to_f)
+    rectangle.print
+  elsif info[0] == "ellipse" || info[0] == "Ellipse"
+    ellipse = Ellipse.new(info[1].to_f, info[2].to_f)
+    ellipse.print
+  end
+end
