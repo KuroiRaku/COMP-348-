@@ -7,4 +7,4 @@
         ((= (mod n 2) 0) (collatz (/ n 2)))
         ((= (mod n 2) 1) (collatz (+ 1 (* n 3)))))))
 
-(collatz 30) ;example of input
+(collatz 20) ;input for part b

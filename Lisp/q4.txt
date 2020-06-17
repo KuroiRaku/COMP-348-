@@ -5,7 +5,7 @@
 
          ((and (not (null (caaddr node))) (> (car node) (caaddr node)))  nil);caaddr = (car (car (cdr (cdr x))))
 
-         ((and (not (isBST (cadr node))) (not (isBST (caddr node)))) ))
+         ((and (not (is-BST (cadr node))) (not (is-BST (caddr node)))) ))
 ;cadr = (car (cdr x))
 ;caddr = (car (cdr (cdr x)))
 

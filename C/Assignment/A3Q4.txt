@@ -1,0 +1,136 @@
+class Shape
+    attr_accessor :name, :perimeter, :area
+    
+    def initialize
+      puts "Creating a new Shape"
+    end
+    
+    def print
+      puts @name + ": perimeter -> " + @perimeter.to_s + ": area -> " + @area.to_s
+    end
+    
+    def perimeter
+      @perimeter = nil
+      return @perimeter
+    end
+    
+    def area
+      @area = nil
+      return @area
+    end
+end
+
+class Circle < Shape
+    attr_accessor :name, :perimeter, :area, :radius
+    
+    def initialize(radius)
+      @name = "Circle"
+      @radius = radius
+      
+      if @radius <=0
+        @area = 0
+      elsif
+      @perimeter = 2 * 3.14 * @radius
+      @area = 3.14 * @radius * @radius
+      end
+      
+      super()
+    end
+    
+    def perimeter
+      @perimeter = 2 * 3.14 * @radius
+      return @perimeter
+    end
+    
+    def area
+      @area = 3.14 * @radius * @radius
+      return @area
+    end
+end
+
+class Rectangle < Shape
+    attr_accessor :name, :perimeter, :area, :height, :width
+
+    def initialize(height, width)
+      @name = "Rectangle"
+      @height = height
+      @width = width
+      
+      if @height <= 0 || @width <= 0
+        @perimeter = 0
+      elsif
+        @perimeter = 2 * (@height + @width)
+      end
+      
+      @area = @height * @width
+      super()
+    end
+    
+    def perimeter
+      @perimeter = 2 * (@height + @width)
+      return @perimeter
+    end
+    
+    def area
+      @area = @height * @width
+      return @area
+    end
+end
+
+class Ellipse < Shape
+    attr_accessor :name, :perimeter, :area, :semi_major, :semi_minor, :eccentricity
+    
+    def initialize(major, minor)
+      @name = "Ellipse"
+      @semi_major = major
+      @semi_minor = major
+      
+      if semi_major <= 0 || semi_minor <=0
+        @area = 0
+      elsif
+        @area = 3.14 * @semi_major * @semi_minor
+        @eccentricity = Math.sqrt((@semi_major * @semi_major) - (@semi_minor * @semi_minor))
+      end
+      
+      super()
+    end
+    
+    def area
+      @area = 3.14 * @semi_major * @semi_minor
+      return @area
+    end
+    
+    def eccentricity
+      @eccentricity = Math.sqrt((@semi_major * @semi_major) - (@semi_minor * @semi_minor))
+      return @eccentricity
+    end
+
+    def print
+      puts @name + ": area -> " + @area.to_s + ": eccentricity -> " + @eccentricity.to_s
+    end
+end
+
+print "Please input the radius of the Circle: "
+r = gets.to_f
+circle = Circle.new(r)
+
+circle.print
+puts
+
+print "Please input the length of the Rectangle: "
+l = gets.to_f
+print "Please input the width of the Rectangle: "
+w = gets.to_f
+rectangle = Rectangle.new(l, w)
+
+rectangle.print
+puts
+
+print "Please input the semi_major of the Ellipse: "
+major = gets.to_f
+print "Please input the semi_minor of the Ellipse: "
+minor = gets.to_f
+ellipse = Ellipse.new(major, minor)
+
+ellipse.print
+puts
