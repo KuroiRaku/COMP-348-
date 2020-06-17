@@ -1,2 +1,11 @@
-﻿  test.c
+﻿  q3.c
+D:\All of My folders\Assignment\COURSES\Sem 3\COMP 348\COMP-348-\C\Assignment\q3.c(75,32): warning C4047: 'function': 'int *' differs in levels of indirection from 'int'
+D:\All of My folders\Assignment\COURSES\Sem 3\COMP 348\COMP-348-\C\Assignment\q3.c(75,32): warning C4024: 'Add': different types for formal and actual parameter 2
+D:\All of My folders\Assignment\COURSES\Sem 3\COMP 348\COMP-348-\C\Assignment\q3.c(52,1): warning C4047: 'initializing': 'int' differs in levels of indirection from 'void *'
+D:\All of My folders\Assignment\COURSES\Sem 3\COMP 348\COMP-348-\C\Assignment\q3.c(127,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'int *'
+D:\All of My folders\Assignment\COURSES\Sem 3\COMP 348\COMP-348-\C\Assignment\q3.c(130,26): warning C4047: '<': 'int' differs in levels of indirection from 'int *'
+D:\All of My folders\Assignment\COURSES\Sem 3\COMP 348\COMP-348-\C\Assignment\q3.c(145,15): warning C4047: '=': 'int *' differs in levels of indirection from 'int'
+D:\All of My folders\Assignment\COURSES\Sem 3\COMP 348\COMP-348-\C\Assignment\q3.c(146,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'int *'
+D:\All of My folders\Assignment\COURSES\Sem 3\COMP 348\COMP-348-\C\Assignment\q3.c(125,1): warning C4047: 'initializing': 'int' differs in levels of indirection from 'int *'
+D:\All of My folders\Assignment\COURSES\Sem 3\COMP 348\COMP-348-\C\Assignment\q3.c(126,1): warning C4047: 'initializing': 'int' differs in levels of indirection from 'int *'
   Assignment.vcxproj -> D:\All of My folders\Assignment\COURSES\Sem 3\COMP 348\COMP-348-\C\Assignment\Debug\Assignment.exe
