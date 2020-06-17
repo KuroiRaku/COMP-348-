@@ -35,11 +35,11 @@ class Circle < Shape
     
     def perimeter
       @perimeter = 2 * 3.14 * @radius
-      @area = 3.14 * @radius * @radius
       return @perimeter
     end
     
     def area
+      @area = 3.14 * @radius * @radius
       return @area
     end
 end
