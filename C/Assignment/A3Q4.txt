@@ -26,8 +26,14 @@ class Circle < Shape
     def initialize(radius)
       @name = "Circle"
       @radius = radius
+      
+      if @radius <=0
+        @area = 0
+      elsif
       @perimeter = 2 * 3.14 * @radius
       @area = 3.14 * @radius * @radius
+      end
+      
       super()
     end
     
@@ -78,8 +84,14 @@ class Ellipse < Shape
       @name = "Ellipse"
       @semi_major = major
       @semi_minor = major
-      @area = 3.14 * @semi_major * @semi_minor
-      @eccentricity = Math.sqrt((@semi_major * @semi_major) - (@semi_minor * @semi_minor))
+      
+      if semi_major <= 0 || semi_minor <=0
+        @area = 0
+      elsif
+        @area = 3.14 * @semi_major * @semi_minor
+        @eccentricity = Math.sqrt((@semi_major * @semi_major) - (@semi_minor * @semi_minor))
+      end
+      
       super()
     end
     
