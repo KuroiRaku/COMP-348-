@@ -1,5 +1,4 @@
 class Shape
-
     attr_accessor :name, :perimeter, :area
     
     def initialize
@@ -22,7 +21,6 @@ class Shape
 end
 
 class Circle < Shape
-    @radius
     attr_accessor :name, :perimeter, :area, :radius
     
     def initialize(radius)
@@ -45,15 +43,19 @@ class Circle < Shape
 end
 
 class Rectangle < Shape
-    @height
-    @width
     attr_accessor :name, :perimeter, :area, :height, :width
 
     def initialize(height, width)
       @name = "Rectangle"
       @height = height
       @width = width
-      @perimeter = 2 * (@height + @width)
+      
+      if @height <= 0 || @width <= 0
+        @perimeter = 0
+      elsif
+        @perimeter = 2 * (@height + @width)
+      end
+      
       @area = @height * @width
       super()
     end
@@ -70,9 +72,6 @@ class Rectangle < Shape
 end
 
 class Ellipse < Shape
-    @semi_major
-    @semi_minor
-    @eccentricity
     attr_accessor :name, :perimeter, :area, :semi_major, :semi_minor, :eccentricity
     
     def initialize(major, minor)
