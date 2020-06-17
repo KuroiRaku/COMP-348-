@@ -4,7 +4,7 @@
 void Well(int* a);
 
 
-/*
+
 int main() {
 	int a = 3;
 	Well(&a);
@@ -12,7 +12,7 @@ int main() {
 	
 	return 0;
 }
-*/
+
 void Well(int* a)
 {
 	*a = 17;

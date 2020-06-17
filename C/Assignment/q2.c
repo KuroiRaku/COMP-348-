@@ -5,7 +5,7 @@ void DisplayArray(int* arr, int num);
 void SelectionSort(int* arr);
 
 static int n;
-/*
+
 int main() {
 	int days[2] = { 1,2 };
 	int* ptr = days;
@@ -21,7 +21,7 @@ int main() {
 
 	return 0;
 }
-*/
+
 void DisplayArray(int* arr, int size)
 {
 	int i;
